@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.23/jquery-ui.min.js"></script>
+<script type="text/javascript" src="scripts/jquery.jsPlumb-1.3.16-all-min.js "></script>
+<script type="text/javascript" src="scripts/diagram.js"></script>
+<link rel="stylesheet" href="style/style.css" />
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Dynamic Diagram</title>
+    </head>
+    <body>
+        <!--<div id="header">
+            <div class="logoHolder"><img src="images/mclogo1.png" /></div>
+            <div class="nameHolder">MobiControl Dynamic Diagram</div>
+        </div>-->
+        <div id="midsection">
+            <div id="midContainer">
+                <div id="tools">
+                    <div id="disclaimer">Please note that any diagrams shown here are to show which ports are needed to make MobiControl fully functional. <br><br>Please do not use these diagrams as a blue print for your MobiControl configuration. </div>
+                    <p>Please select the type of environment you want to use:</p>
+                        <table class='options'>
+                            <tr>
+                                <td><label>Internal <input id="rdoInternal" type="radio" name="rdoEnvi" value="internal"></input></label></td>
+                                <td><label>DMZ <input id="rdoDMZ" type="radio" name="rdoEnvi" value="dmz"></input></label></td>
+                                <td><label>Cloud <input id="rdoCloud" type="radio" name="rdoEnvi" value="cloud"></label></td>
+                            </tr>
+                        </table>    
+                    <!--<span class='options'>
+                            <label for="rdoInternal">Internal</label> <input id="rdoInternal" type="radio" name="rdoEnvi" value="internal"></input>
+                            <label for="rdoDMZ">DMZ</label><input id="rdoDMZ" type="radio" name="rdoEnvi" value="dmz"></input>                    
+                            <label for="rdoCloud">Cloud</label><input id="rdoCloud" type="radio" name="rdoEnvi" value="cloud"></input>
+                        </span>-->
+                    <div id='options'>
+                        <p>Do you wish to seperate the MobiControl server into Deployment and Management Servers?</p>
+                            <table class='options'>
+                                <tr>
+                                    <td><label>Yes<input type="radio" id="rdoYes" name="rdoMultiple" value="yes"></label></td>
+                                    <td><label>No<input type="radio" id="rdoNo" name="rdoMultiple" value="no" checked="checked"></label></td>
+                                </tr>
+                            </table>
+                    </div>
+                    <div id="additionalOptions">
+                        <p>Please select any additional components needed:</p>
+                        <table class='options'>
+                            <tr>                  
+                                <td><input id="chkAPNS" type="checkbox" name="chkAPNS" /><label for="chkAPNS">APNS</label></td>
+                                <td><input id="chkFirewall" type="checkbox" name="chkFirewall"/><label for="chkFirewall">Firewall</label></td>
+                            </tr>
+                            <tr>
+                                <td><input id="chkLDAP" type="checkbox" name="chkLDAP"/><label for="chkLDAP">LDAP</label></td>
+                                <td><input id="chkCA" type="checkbox" name="chkCA"/><label for="chkCA">Certificates</label></td>
+                            </tr> 
+                            <tr>
+                                <td><input id="chkExchange" type="checkbox" name="chkExchange"/><label for="chkExchange">Exchange</label></td>
+                                <td><input id="chkExchangeFilter" type="checkbox" name="chkExchangeFilter"/><label for="chkExchangeFilter"> Filter</label></td>
+                            </tr> 
+                         </table> 
+                    </div>
+                    <input type="button" value="Print This Diagram" onclick="window.print()" />
+                </div>
+                <div id="diagram" class="border print">
+                    <p id="title"></p>
+                    <div id="start">Please select options on the left to begin</div>
+                    <div id="drawArea">
+                        <div id="device" class="contain"><img class="icon" src="images/128x128/deviceicon.png" /><div>Device</div></div>
+                        <div id="webConsole" class="contain"><img class="icon" src="images/128x128/webconsoleicon.png" /><div>Web Console</div></div>
+                        <div id="mcDepServer" class="contain"><img class="icon" src="images/128x128/ServerMobiControlIcon.png" /><div>MobiControl Deployment Server</div></div>
+                        <div id="mcManageServer" class="contain"><img class="icon" src="images/128x128/ServerMobiControlIcon.png" /><div>MobiControl Management Service</div></div>
+                        <div id="mcServer" class="contain"><img class="icon" src="images/128x128/ServerMobiControlIcon.png" /><div>MobiControl Server</div></div>
+                        <div id="sqlServer" class="contain"><img class="icon" src="images/128x128/ServerSQLIcon.png" /><div>Microsoft SQL Server</div></div>
+                        <div id="ldapServer" class="contain"><img class="icon" src="images/128x128/ServerLDAPIcon.png" /><div>LDAP Server</div></div>
+                        <div id="exchangeFilter" class="contain"><img class="icon" src="images/128x128/ServerIcon.png" /><div>Exchange Filter</div></div>
+                        <div id="exchangeServer" class="contain"><img class="icon" src="images/128x128/ServerExchangeIcon.png" /><div>Exchange Server</div></div>
+                        <div id="APNS" class="contain"><img class="icon" src="images/128x128/ServerAppleIcon.png" /><div>APNS</div></div>
+                        <div id="CA" class="contain"><img class="icon" src="images/128x128/ServerIcon.png" /><div>Certificate Authority</div></div>
+                        <div id="cloudInternet" class="cloud"><img class="icon" src="images/128x128/CloudInternet.png" /></div>
+                        <div id="copyright">© SOTI Inc. 2013</div>
+                        <div id="firewall1" class="firewall"><img class="icon" src="images/128x128/FireWallIcon.png" />
+                            <span id="left">&nbsp</span><div id="right">&nbsp</div></div>
+                        <div id="firewall2" class="firewall"><img class="icon" src="images/128x128/FireWallIcon.png" />
+                            <div id="left">&nbsp</div><div id="right">&nbsp</div></div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+
+           
+        
+    </body>
+</html>

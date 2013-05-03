@@ -1,0 +1,284 @@
+/* © SOTI Inc. 2013
+ * Jonathan Cammisuli  
+ */
+body,html {
+    margin: 0;
+    height: 100%;
+    width: 100%;
+    font-family: Calibri;
+    overflow: hidden;
+}
+
+.contain{
+    position:  absolute;
+    text-align: center;
+    font-size: 12px;
+    display: none;
+}
+.contain img{
+    height: 80px;
+}
+
+
+#header {
+    min-width: 1050px;
+    max-width: 100%;
+    height: 6%;
+    min-height: 50px;
+    padding: 10px;
+    padding-top:  1%;
+    background: #5377b7; /* Old browsers */
+    /* IE9 SVG, needs conditional override of 'filter' to 'none' */
+    background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzUzNzdiNyIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMzODY1YjUiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+    background: -moz-linear-gradient(top,  #5377b7 0%, #3865b5 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#5377b7), color-stop(100%,#3865b5)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  #5377b7 0%,#3865b5 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  #5377b7 0%,#3865b5 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  #5377b7 0%,#3865b5 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  #5377b7 0%,#3865b5 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#5377b7', endColorstr='#3865b5',GradientType=0 ); /* IE6-8 */
+    border-bottom: thin solid rgba(0,0,0,0.4);
+}
+#header img
+{
+    height: 100%;
+    min-height: 35px;
+    margin-left: 2%;
+    vertical-align: middle;
+    margin-top: -25px;
+}
+#header div{
+    color: white;
+    font-style: italic;
+    font-weight: bold;
+    font-size: 54px;
+}
+
+.logoHolder{
+    display: inline-block;
+    height: 100%;
+}
+.nameHolder{
+    display: inline-block;
+}
+
+#disclaimer{
+    padding-top: 5px;
+    text-align: center;
+}
+#midsection{
+    height: 95%;
+}
+
+
+#tools{
+    float: left;
+    width:16%;
+    height: 100%;
+    display: inline-block;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+#tools p{
+  background-color: #b1cdef;
+  padding: 5px;
+}
+
+#options, #additionalOptions{
+    display: none;
+    
+}
+
+
+#toolsContainer {
+    height: 300px;
+    transition:  all 0.5s;
+    -moz-transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+    -o-transition: all 0.5s;
+}
+
+
+
+.options{
+    padding-left: 5px;
+}
+
+
+#diagram{
+    margin-top: 7px;
+    margin-bottom: 7px;
+    display: inline-block;
+    float: left;
+    width: 82%;
+    height: 100%;
+    position: relative;
+}
+#drawArea{
+    height: 95.5%;
+}
+
+.border{
+    border-style: dashed;
+    border-color: rgba(105, 128, 150, 0.73);
+    color: rgba(105, 128, 150, 0.73);
+    border-width:  2px;
+}
+
+#start{
+    color: rgba(105, 128, 150, 0.73);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -120px;
+    margin-top: -10px;
+    text-align: center;
+}
+
+#midContainer {
+    margin-top: 7px;
+    height: 100%;
+}
+
+#footer{
+    text-align: center;
+    width: 100%;
+    background-color: #5377b7;
+    height:  5%;
+    min-height: 5px;
+    padding-top: 1%;
+}
+
+#title{
+    text-align: center;
+    margin-bottom: 0; 
+}
+
+#copyright
+{
+    position: absolute;
+    bottom: 0;
+    padding-right: 5px;
+}
+
+input[type='checkbox']
+{
+    margin-top: 4px;
+    margin-left: 10px;
+    
+    
+}
+
+
+#additionalOptions table label{
+    display: inline-block;
+    vertical-align: middle;
+    padding-bottom: 6px !important;
+    width: 90px;
+}
+
+#additionalOptions table input{
+    text-align: center;
+}
+
+.cssLabel{
+    background-color:white; 
+	padding:0.4em; 
+	font:12px sans-serif; 
+	color:#444;
+	z-index:21;
+	border:1px solid gray;
+	opacity:0.8;
+	filter:alpha(opacity=50);
+}
+
+.cloud {
+    display: none;
+    position:  absolute;
+}
+.cloud img{
+    height: 150px !important;
+}
+
+.firewall{
+    height: 76%;
+    width: 100px;
+    display: none;
+}
+.firewall img{
+    height: 100px;
+}
+#left{
+    width:50%;
+    float:left;
+    height: 100%
+}
+#right{
+    margin-left:50%;
+    border-left:dashed 1px gray;
+    height: 100%;
+}
+label, input{
+    cursor: pointer;
+}
+
+@media screen and (max-height: 720px) {
+    .contain img{
+        height: 60px;
+    }
+    .cloud img{
+        height: 120px !important;
+    }
+}
+@media screen and (max-height: 960px) and (max-width: 1280px){
+    .contain img{
+        height: 50px;
+    }
+    .cloud img{
+        height: 110px !important;
+    }
+    .firewall img{
+        height: 80px;
+    }
+	#diagram{
+		width: 80%;
+	}
+	body,html{
+		font-size: 11pt;
+	}
+    #additionalOptions table{
+        font-size: 10pt;
+    }
+	#additionalOptions table label{
+		width: 55px;
+	}
+    .cssLabel{
+	    font:11px sans-serif; 
+    }
+}
+
+@media print {
+    .print{
+        visibility: visible;
+    }
+    body {
+    visibility:hidden;
+    
+    }
+    #diagram{
+        margin-top: 7px;
+        margin-bottom: 7px;
+        width: 99%;
+        height: 98%;
+        position: absolute;
+        top:0;
+        left: 0;
+        font-size: 12px;
+        -webkit-transform: rotate(-90deg); -moz-transform:rotate(-90deg);
+        filter:progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+    }
+    #diagram .contain, .cloud{
+        z-index: 10;
+    }
+}
