@@ -1,0 +1,1 @@
+This is a html page that uses javascript(jquery) to display a dynamic diagram.
